@@ -1,0 +1,34 @@
+---
+layout: base
+---
+<div class="m-2 flex flex-col mx-auto text-center">
+  <div class="flex flex-col sm:flex-row mx-auto items-center">
+    <img class="h-60 object-contain md:h-72 lg:h-96" src="../../static/assets/livros/{{ mini }}" alt={{ titulo }}>
+    <div class="flex flex-col sm:ml-2 sm:items-start">
+      <p><strong>Título Original</strong>: {{ original }}</p>
+      <p><strong>Ano de Publicação</strong>: {{ publicacao }}</p>
+      <p><strong>Arco</strong>: <a class="text-yellow-800" href="/guia/{{ arco | slug }}">{{ arco }}</a></p>
+      <p><strong>Lançamento no Brasil</strong>: {{ lancamentobr }}</p>
+      <p><strong>Editora</strong>: {{ editora }}</p>
+      <p><strong>Páginas</strong>: {{ paginas }}</p>
+    </div>
+  </div>
+  <div class="m-2 sm:w-4/5 sm:mx-auto">
+    <p><strong>Sinopse</strong>:</p>
+    {{ content | safe }}
+  </div>
+
+  <div class="flex flex-col my-4 mx-2 sm:w-4/5 sm:mx-auto sm:flex-row justify-between">
+  {%- set previousBook = collections.livros | getPreviousCollectionItem(page) %}
+  {%- if previousBook %}
+    <p>Livro anterior: <a class="link" href="{{ previousBook.url | url }}">{{ previousBook.data.titulo }}</a></p>
+  {% endif %}
+  {%- set nextBook = collections.livros | getNextCollectionItem(page) %}
+  {%- if nextBook %}
+    <p>Próxmo livro: <a class="link" href="{{ nextBook.url | url }}">{{ nextBook.data.titulo }}</a></p>
+  {% endif %}
+</div>
+
+</div>
+
+<script src="../../static/js/navbar.js"></script>
