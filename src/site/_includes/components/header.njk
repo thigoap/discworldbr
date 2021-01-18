@@ -1,11 +1,38 @@
-<header id="navbar" class="fixed bg-yellow-400 w-full transition-all duration-500 py-1">
-  <div class="flex justify-between px-4 md:w-4/5 md:mx-auto md:px-0 lg:w-3/5">
-    <p class="flex self-center link"><a href="/livros">Biblioteca</a></p>
-    <p class="flex self-center">
-      <a href="/">
-        <img class="h-8" src="/static/assets/disc-logo.png" alt="">
+<header>
+  <nav id="navbar" class="bg-yellow-400 w-full py-1">
+  {# only when fixed navbar
+  <nav id="navbar" class="bg-yellow-400 w-full py-1 fixed transition-all duration-500"> #}
+
+    <div class="flex justify-between px-4 md:w-4/5 md:mx-auto md:px-0">
+      
+      <a class="z-10" href="/">
+        <img class="h-8" src="/static/assets/disc-logo.png" alt="Discworld Logo">
       </a>
-    </p>
-    <p class="flex self-center link"><a href="/terry-pratchett">T. Pratchett</a></p>
-  </div>
+
+      <div class="flex flex-col sm:flex-row sm:w-3/5">
+        <div id="burgerbtn" class="z-10">
+          <p class="text-2xl cursor-pointer text-right sm:hidden">&#9776</p>
+        </div>
+        {# tailwind burger #}
+        <ul id="navLinks" class="flex flex-col right-0 pr-4 pb-2 transform duration-300 -translate-y-32 absolute bg-yellow-400 w-full 
+        sm:flex-row  sm:justify-between sm:self-center sm:relative sm:pb-0 sm:pr-0 sm:translate-y-0">
+        {# tailwind burger #}
+          <li class="flex justify-end"><a class="link" href="/livros">Biblioteca</a></li>
+          <li class="flex justify-end"><a class="link" href="/personagens">Personagens</a></li>
+          <li class="flex justify-end"><a class="link" href="/terry-pratchett">T. Pratchett</a></li>
+          <li class="flex justify-end"><a class="link" href="/extras">Extras</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
 </header>
+
+<script>
+  burgerbtn.addEventListener('click', () => {
+      navLinks.classList.toggle('-translate-y-32')
+      navLinks.classList.toggle('translate-y-9')
+    }
+  )
+</script>

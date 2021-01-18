@@ -1,8 +1,8 @@
 {
-  "title": "Biblioteca do Disco",
-  "url": "https://bibliotecadodisco.netlify.app",
+  "title": "Biblioteca Discworld",
+  "url": "https://bibliotecadiscworld.netlify.app",
   "description": "Site com os livros de Terry Pratchett publicados no Brasil. Série Discworld e demais estórias.",
-  "logo": "/static/assets/m-disc-icon.png",
+  "logo": "/static/assets/disc-icon.png",
   "author": {
     "name": "Thiago Abrahão Pereira",
     "email": "appthigo@gmail.com",

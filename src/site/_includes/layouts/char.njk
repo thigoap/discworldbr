@@ -1,0 +1,25 @@
+---
+layout: base
+---
+
+<div class="m-2 flex flex-col mx-auto ">
+  <div class="flex flex-col sm:flex-row mx-auto items-center text-center">
+    <div>
+      <img class="h-60 object-contain md:h-72 lg:h-96" src="../../static/assets/personagens/{{ mini }}" alt={{ titulo }}>
+      <p class="text-xs">Arte de Paul Kidby</p>
+    </div>
+    <div class="flex flex-col mt-2 sm:mt-0 sm:ml-2 sm:items-start">
+      <p><span class="font-semibold">Nome</span>: {{ nome }}</p>
+      <p><span class="font-semibold">Aparições em livros publicados no Brasil</span>:<p>
+      {% for shows in livros %}
+      <p><a class="text-yellow-800" href="/livros/{{ shows | slug }}">{{ shows }}</a></p>
+      {% endfor  %}
+    </div>
+  </div>
+  <div class="m-2 sm:w-4/5 sm:mx-auto text-justify">
+    {{ content | safe }}
+  </div>
+
+</div>
+
+<script src="../../static/js/navbar.js"></script>

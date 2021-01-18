@@ -1,17 +1,18 @@
-// function sortByOrder(values) {
-//   let vals = [...values];     // this *seems* to prevent collection mutation...
-//   return vals.sort((a, b) => Math.sign(a.data.order - b.data.order));
-// }
+function sortByOrder(values) {
+  let vals = [...values];     // this *seems* to prevent collection mutation...
+  return vals.sort((a, b) => Math.sign(a.data.order - b.data.order));
+}
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/site/static")
 
   eleventyConfig.addLayoutAlias("base", "layouts/base.njk")
   eleventyConfig.addLayoutAlias("books", "layouts/book.njk")
+  eleventyConfig.addLayoutAlias("chars", "layouts/char.njk")
 
   eleventyConfig.setDataDeepMerge(true);
 
-  // eleventyConfig.addFilter("sortByOrder", sortByOrder);
+  eleventyConfig.addFilter("sortByOrder", sortByOrder);
 
   eleventyConfig.addCollection("archList", function(collection) {
     let archSet = new Set();
@@ -24,6 +25,7 @@ module.exports = function(eleventyConfig) {
             // this list should match the `filter` list in arcos.njk
             case "all":
             case "livros":
+            case "personagens":
               return false;
           }
 

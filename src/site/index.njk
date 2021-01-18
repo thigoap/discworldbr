@@ -1,16 +1,58 @@
 ---
 layout: base
 ---
-<div class="bg-gray-900 h-9 -mt-9"></div>
+<div class="bg-gray-900 {# h-9 -mt-9 #}"></div>
 <div class="bg-gray-900">
 {% include './_includes/components/quotes.njk' %}
 </div>
-<div class="md:w-4/5 md:mx-auto">
-  <div class="m-4">
-    <p>A série de livros de Discworld de Terry Pratchett consiste em impressionantes 41 livros, escritos em um período de 32 anos. O Discworld cresceu e se tornou um dos mundos de fantasia mais ricos em detalhes e criativos da literatura.</p>
-    <p>Se você está procurando uma estória única, qualquer um dos livros pode ser apreciado isoladamente, mas se você pretende aproveitar ao máximo sua exploração no Discworld, você pode acessar o pequeno guia de leitura a seguir, dividido em arcos.</p>
-    <p class="my-4"><a class="p-2 rounded bg-yellow-400 font-semibold link" href="/guia">Guia de Leitura</a></p>
+  <div class="md:w-4/5 md:mx-auto">
+    <div class="m-4 text-justify">
+      <p>Discworld é uma série de livros de fantasia cômica de Terry Pratchett.</p>
+      <p>Os romances se passam no Discworld, um mundo plano equilibrado nas costas de quatro elefantes que, por sua vez, ficam nas costas de uma tartaruga gigante, o(a) Grande A'Tuin. Os livros freqüentemente parodiam, ou pelo menos emprestam idéias de J. R. R. Tolkien, Robert E. Howard, H. P. Lovecraft e William Shakespeare, bem como mitologia, folclore e contos de fadas, muitas vezes usando-os para paralelos satíricos com questões culturais, tecnológicas e científicas atuais.</p>
+      <p>A série consiste em impressionantes 41 livros, escritos em um período de 32 anos. Números que fazem o Discworld se tornar um dos mundos de fantasia mais ricos em detalhes e criativos da literatura.</p>
+      <p>Se você está procurando uma estória única, qualquer um dos livros pode ser apreciado isoladamente, mas se você pretende aproveitar ao máximo sua exploração no 'Disco', você pode acessar um pequeno guia de leitura que divide os livros em arcos ou consultar a seção de personagens.</p>
+    </div>
   </div>
-</div>
+
+  <div class="grid grid-cols-1 m-4 gap-x-16 gap-y-4 sm:grid-cols-2 md:w-4/5 lg:w-3/5 mx-auto text-2xl font-semibold">
+    <div class="flex justify-center">
+      <a class="link" href="/livros">
+        <img class="h-48" src="/static/assets/personagens/luggage.png"  alt="menu biblioteca">
+      </a>
+      <p class="self-end -ml-6 pb-2">
+        <a class="link" href="/livros">Biblioteca</a>
+      </p>
+    </div>
+    <div class="flex justify-center">
+      <a class="link" href="/guia">
+        <img class="h-48" src="/static/assets/personagens/librarian.png" alt="menu guia de leitura">
+      </a>
+      <p class="self-center pt-4 -ml-6">
+        <a class="link" href="/guia">Guia de<br>Leitura</a>
+      </p>
+    </div>
+    <div class="flex justify-center">
+      <a class="link" href="/personagens">
+        <img class="h-48" src="/static/assets/personagens/rincewind.png" alt="menu personagens">
+      </a>
+      <p class="pt-14 -ml-6">
+        <a class="link" href="/personagens">Personagens</a>
+      </p>
+    </div>
+    <div class="flex justify-center">
+      <a class="link" href="/terry-pratchett">
+        <img class="h-48" src="/static/assets/terry.png" alt="menu terry pratchett"></a>
+      <p class="pt-8">
+        <a class="link" href="/terry-pratchett">Terry<br>Pratchett</a>
+      </p>
+    </div>
+    <div class="flex justify-center">
+      <a class="link" href="/extras">
+        <img class="h-48" src="/static/assets/extras.png" alt="menu extras"></a>
+      <p class="pt-6 -ml-6">
+        <a class="link" href="/extras">Extras</a>
+      </p>
+    </div>  
+  </div>
 
 <script src="./static/js/index.js"></script>
